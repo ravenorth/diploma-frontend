@@ -1,0 +1,18 @@
+.container {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+}
+
+.wrapper {
+    width: var(--large-width);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.table {
+    width: var(--large-width);
+}

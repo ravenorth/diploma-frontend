@@ -1,0 +1,29 @@
+.blockContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.secondContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.errorMessage {
+    text-align: end;
+    margin-top: 5px;
+    color: #ff4d4f;
+}
+
+.blockTitle {
+    color: #60697a;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.blockContent {
+    width: max-content;
+}

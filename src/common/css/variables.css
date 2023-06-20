@@ -1,0 +1,11 @@
+:root {
+    --default-font-family: 'Montserrat', sans-serif;
+
+    --default-dark-color: #272A2F;
+    --scrollbar-color: #e2e2e2;
+
+    --middle-width: 80vw;
+    --large-width: 93vw;
+
+    --layout-content-margin: unset;
+}

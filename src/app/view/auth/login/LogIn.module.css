@@ -1,0 +1,44 @@
+.content {
+    width: 550px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-style: normal;
+    font-size: 20px;
+}
+
+.header {
+    margin-bottom: 50px;
+    font-weight: 500;
+    font-size: 40px;
+}
+
+.between {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 400;
+    font-size: 16px;
+    color: #798398;
+    margin-bottom: 25px;
+}
+
+.rememberText {
+    margin-left: 10px;
+}
+
+.reset {
+    font-weight: 400;
+    font-size: 16px;
+    color: #798398;
+    text-decoration: underline;
+}
+
+.reset:hover {
+    cursor: pointer;
+    color: #5b6272;
+}

@@ -1,0 +1,8 @@
+.navBar {
+    width: var(--middle-width);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 5px;
+}

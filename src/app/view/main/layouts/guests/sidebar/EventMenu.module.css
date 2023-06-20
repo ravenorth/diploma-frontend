@@ -1,0 +1,21 @@
+.sider {
+    overflow-y: scroll;
+    height: calc(100vh - 50px);
+    width: 200px;
+    position: fixed;
+    bottom: 0;
+    background: #fff;
+}
+
+.sider::-webkit-scrollbar {
+    width: 6px;
+}
+  
+.sider::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-color);
+    border-radius: 100px;
+}
+
+.menu {
+    font-family: var(--default-font-family);
+}

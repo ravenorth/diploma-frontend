@@ -1,0 +1,17 @@
+.layout {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.contentRow {
+    display: flex;
+    height: calc(100vh - 50px);
+}
+
+.content {
+    overflow: auto;
+    flex-grow: 1;
+    background: #F0F2F5;
+}
+

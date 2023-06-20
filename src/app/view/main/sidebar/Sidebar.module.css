@@ -1,0 +1,15 @@
+.sider {
+    overflow: auto;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    transition: width 0.3s ease;
+    box-shadow: 1px 0 0 0 #dbd4d4;
+}
+
+.menu {
+    width: 50px;
+    height: calc(100vh - 50px);
+    border-right: 1px solid transparent;
+}

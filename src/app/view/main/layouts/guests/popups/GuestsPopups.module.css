@@ -1,0 +1,16 @@
+.settleOptionsList {
+    max-height: 350px;
+    width: 450px;
+    overflow-y: auto;
+}
+
+.item {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.hotel {
+    font-weight: 500;
+    margin-right: 5px;
+}
