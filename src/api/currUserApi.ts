@@ -4,7 +4,7 @@ import { UserFullData } from "../app/model/users/userData"
 import { apiUrls } from "./apiUrls"
 
 async function initUser(): Promise<UserFullData> {
-    return fetch(apiUrls.initUser, {
+    return fetch(apiUrls.user, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',

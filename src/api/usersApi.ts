@@ -5,7 +5,7 @@ import { apiUrls } from "./apiUrls";
 import { remapRoleToApi } from "../app/model/users/userRole";
 
 function getManagers(): Promise<Array<UserData>> {
-    return fetch(apiUrls.getAllManagers, {
+    return fetch(apiUrls.managersList, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -23,7 +23,7 @@ function getManagers(): Promise<Array<UserData>> {
 }
 
 function getAllHotelUsers(): Promise<Array<UserData>> {
-    return fetch(apiUrls.getAllHotelUsers, {
+    return fetch(apiUrls.hotelUsersList, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -41,7 +41,7 @@ function getAllHotelUsers(): Promise<Array<UserData>> {
 }
 
 function getUsers(): Promise<Array<UserFullData>> {
-    return fetch(apiUrls.getAllUsers, {
+    return fetch(apiUrls.usersList, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -59,7 +59,7 @@ function getUsers(): Promise<Array<UserFullData>> {
 }
 
 function createUser(userData: Omit<UserFullData, 'id'>): Promise<{id: string}> {
-    return fetch(apiUrls.createUser, {
+    return fetch(apiUrls.user, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -81,7 +81,7 @@ function createUser(userData: Omit<UserFullData, 'id'>): Promise<{id: string}> {
 }
 
 function editUser(userData: UserFullData): Promise<Response> {
-    return fetch(apiUrls.editUser + userData.id, {
+    return fetch(apiUrls.user + userData.id, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
@@ -103,7 +103,7 @@ function editUser(userData: UserFullData): Promise<Response> {
 }
 
 function deleteUser(id: string): Promise<Response> {
-    return fetch(apiUrls.deleteUser + id, {
+    return fetch(apiUrls.user + id, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',

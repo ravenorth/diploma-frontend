@@ -4,7 +4,7 @@ import { tokenHandler } from "../core/localStorage/token";
 import { apiUrls } from "./apiUrls";
 
 function createGuest(groupId: string, guestData: Omit<GuestFullData, 'id'>): Promise<{id: string}> {
-    return fetch(apiUrls.createGuest, {
+    return fetch(apiUrls.guest, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -26,7 +26,7 @@ function createGuest(groupId: string, guestData: Omit<GuestFullData, 'id'>): Pro
 }
 
 function editGuest(guestData: GuestFullData): Promise<Response> {
-    return fetch(apiUrls.editGuest + guestData.id, {
+    return fetch(apiUrls.guest + guestData.id, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
@@ -47,7 +47,7 @@ function editGuest(guestData: GuestFullData): Promise<Response> {
 }
 
 function deleteGuest(id: string): Promise<Response> {
-    return fetch(apiUrls.deleteGuest + id, {
+    return fetch(apiUrls.guest + id, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',

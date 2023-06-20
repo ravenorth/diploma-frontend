@@ -6,7 +6,7 @@ import { ApiEventData } from "./apiData"
 import { apiUrls } from "./apiUrls"
 
 function getEventData(id: string): Promise<ApiEventData> {
-    return fetch(apiUrls.getEventData + id, {
+    return fetch(apiUrls.event + id, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -24,7 +24,7 @@ function getEventData(id: string): Promise<ApiEventData> {
 }
 
 function getEvents(): Promise<Array<EventData>> {
-    return fetch(apiUrls.getAllEvents, {
+    return fetch(apiUrls.eventsList, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -42,7 +42,7 @@ function getEvents(): Promise<Array<EventData>> {
 }
 
 function createEvent(eventData: Omit<EventFullData, 'id'>): Promise<{id: string}> {
-    return fetch(apiUrls.createEvent, {
+    return fetch(apiUrls.event, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -65,7 +65,7 @@ function createEvent(eventData: Omit<EventFullData, 'id'>): Promise<{id: string}
 }
 
 function editEvent(eventData: EventFullData): Promise<Response> {
-    return fetch(apiUrls.editEvent + eventData.id, {
+    return fetch(apiUrls.event + eventData.id, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
@@ -88,7 +88,7 @@ function editEvent(eventData: EventFullData): Promise<Response> {
 }
 
 function deleteEvent(id: string): Promise<Response> {
-    return fetch(apiUrls.deleteEvent + id, {
+    return fetch(apiUrls.event + id, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',
@@ -106,7 +106,7 @@ function deleteEvent(id: string): Promise<Response> {
 }
 
 function getJournalStatistic(id: string): Promise<JournalStatistic[]> {
-    return fetch(apiUrls.getJournalStatistic + id, {
+    return fetch(apiUrls.statistics + id, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -124,7 +124,7 @@ function getJournalStatistic(id: string): Promise<JournalStatistic[]> {
 }
 
 function getJournalData(id: string): Promise<JournalData[]> {
-    return fetch(apiUrls.getJournalData + id, {
+    return fetch(apiUrls.settlement + id, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
