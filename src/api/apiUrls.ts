@@ -1,56 +1,37 @@
 const baseUrl = 'http://qwdsjenwfwasdq.site/'
-// const baseUrl = 'https://80.78.248.73:443/'
-// const baseUrl = 'https://localhost:7240/'
+// const baseUrl = '/'
 
 const apiUrl = baseUrl + 'api/'
 
 const apiUrls = {
-    login: apiUrl + 'login',
-    logout: apiUrl + 'logout',
+    login: apiUrl + 'login/',
+    logout: apiUrl + 'logout/',
 
-    sendCode: apiUrl + 'send_code',
-    verifyCode: apiUrl + 'verify_code',
-    resetPassword: apiUrl + 'reset_pass',
+    sendCode: apiUrl + 'send_code/',
+    verifyCode: apiUrl + 'verify_code/',
+    resetPassword: apiUrl + 'reset_pass/',
 
-    initUser: apiUrl + 'user',
-    updatePassword: apiUrl + 'upd_pass',
+    updatePassword: apiUrl + 'upd_pass/',
+    user: apiUrl + 'user/',
+    usersList: apiUrl + 'users/',
+    managersList: apiUrl + 'managers/',
+    hotelUsersList: apiUrl + 'hotel_users/',
 
-    getAllManagers: apiUrl + 'managers',
-    getAllHotelUsers: apiUrl + 'hotel_users',
-    getAllUsers: apiUrl + 'users',
-    createUser: apiUrl + 'user',
-    editUser: apiUrl + 'user/',
-    deleteUser: apiUrl + 'user/',
+    group: apiUrl + 'group/',
+    groupsList: apiUrl + 'groups/',
 
-    getAllGroups: apiUrl + 'groups/',
-    createGroup: apiUrl + 'group',
-    editGroup: apiUrl + 'group/',
-    deleteGroup: apiUrl + 'group/',
+    guest: apiUrl + 'settler/',
 
-    createGuest: apiUrl + 'settler',
-    editGuest: apiUrl + 'settler/',
-    deleteGuest: apiUrl + 'settler/',
+    settleOptions: apiUrl + 'relev_hotels/',
+    settlement: apiUrl + 'record/',
 
-    getSettleOptions: apiUrl + 'relev_hotels/',
-    settleGroup: apiUrl + 'record',
-    deleteSettlement: apiUrl + 'record/',
+    hotel: apiUrl + 'hotel/',
+    hotelsList: apiUrl + 'hotels/',
+    category: apiUrl + 'days/',
 
-    getAllHotels: apiUrl + 'hotels/',
-    getHotelData: apiUrl + 'hotel/',
-    createHotel: apiUrl + 'hotel',
-    editHotel: apiUrl + 'hotel/',
-    deleteHotel: apiUrl + 'hotel/',
-    createCatgory: apiUrl + 'days',
-    editCategory: apiUrl + 'days',
-    deleteCategory: apiUrl + 'days',
-
-    getAllEvents: apiUrl + 'events',
-    getEventData: apiUrl + 'event/',
-    getJournalStatistic: apiUrl + 'get_journal_statistic/',
-    getJournalData: apiUrl + 'record/',
-    createEvent: apiUrl + 'event',
-    editEvent: apiUrl + 'event/',
-    deleteEvent: apiUrl + 'event/',
+    event: apiUrl + 'event/',
+    eventsList: apiUrl + 'events/',
+    statistics: apiUrl + 'journal_statistic/',
 }
 
 export {

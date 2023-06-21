@@ -6,7 +6,7 @@ import { ApiEditHotelData, ApiHotelData } from "./apiData"
 import { apiUrls } from "./apiUrls"
 
 function getHotelData(hotelId: string): Promise<ApiHotelData> {
-    return fetch(apiUrls.getHotelData + hotelId, {
+    return fetch(apiUrls.hotel + hotelId, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -24,7 +24,7 @@ function getHotelData(hotelId: string): Promise<ApiHotelData> {
 }
 
 function getHotels(eventId: string): Promise<Array<HotelData>> {
-    return fetch(apiUrls.getAllHotels + eventId, {
+    return fetch(apiUrls.hotelsList + eventId, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -42,7 +42,7 @@ function getHotels(eventId: string): Promise<Array<HotelData>> {
 }
 
 function createHotel(eventId: string, hotelData: Omit<HotelInfoData, 'id'>): Promise<{id: string}> {
-    return fetch(apiUrls.createHotel, {
+    return fetch(apiUrls.hotel, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -69,7 +69,7 @@ function createHotel(eventId: string, hotelData: Omit<HotelInfoData, 'id'>): Pro
 }
 
 function editHotel(hotelData: ApiEditHotelData): Promise<Response> {
-    return fetch(apiUrls.editHotel + hotelData.id, {
+    return fetch(apiUrls.hotel + hotelData.id, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
@@ -95,7 +95,7 @@ function editHotel(hotelData: ApiEditHotelData): Promise<Response> {
 }
 
 function deleteHotel(id: string): Promise<Response> {
-    return fetch(apiUrls.deleteHotel + id, {
+    return fetch(apiUrls.hotel + id, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',

@@ -5,7 +5,7 @@ import { SettleGroup_ApiPayload } from "./apiData";
 import { apiUrls } from "./apiUrls";
 
 function getSettleOptions(id: string): Promise<SettleOption[]> {
-    return fetch(apiUrls.getSettleOptions + id, {
+    return fetch(apiUrls.settleOptions + id, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -23,7 +23,7 @@ function getSettleOptions(id: string): Promise<SettleOption[]> {
 }
 
 function settleGroup(payload: SettleGroup_ApiPayload): Promise<Response> {
-    return fetch(apiUrls.settleGroup, {
+    return fetch(apiUrls.settlement, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -44,7 +44,7 @@ function settleGroup(payload: SettleGroup_ApiPayload): Promise<Response> {
 }
 
 function deleteSettlement(groupId: string): Promise<Response> {
-    return fetch(apiUrls.deleteSettlement + groupId, {
+    return fetch(apiUrls.settlement + groupId, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',

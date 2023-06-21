@@ -4,7 +4,7 @@ import { DeleteCategory_ApiPayload, UpdateCategory_ApiPayload } from "./apiData"
 import { apiUrls } from "./apiUrls"
 
 function createCategory({hotelId, categoryData}: UpdateCategory_ApiPayload): Promise<Response> {
-    return fetch(apiUrls.createCatgory, {
+    return fetch(apiUrls.category, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -26,7 +26,7 @@ function createCategory({hotelId, categoryData}: UpdateCategory_ApiPayload): Pro
 }
 
 function editCategory({hotelId, categoryData}: UpdateCategory_ApiPayload): Promise<Response> {
-    return fetch(apiUrls.editCategory, {
+    return fetch(apiUrls.category, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
@@ -48,7 +48,7 @@ function editCategory({hotelId, categoryData}: UpdateCategory_ApiPayload): Promi
 }
 
 function deleteCategory({hotelId, categoryName}: DeleteCategory_ApiPayload): Promise<Response> {
-    return fetch(apiUrls.deleteCategory, {
+    return fetch(apiUrls.category, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',

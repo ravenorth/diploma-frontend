@@ -6,7 +6,7 @@ import { ApiGroupData } from "./apiData"
 import { apiUrls } from "./apiUrls"
 
 function getGroups(eventId: string): Promise<Array<ApiGroupData>> {
-    return fetch(apiUrls.getAllGroups + eventId, {
+    return fetch(apiUrls.groupsList + eventId, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -24,7 +24,7 @@ function getGroups(eventId: string): Promise<Array<ApiGroupData>> {
 }
 
 function createGroup(eventId: string, groupData: Omit<GroupFullData, 'id'|'guests'|'status'>): Promise<{id: string}> {
-    return fetch(apiUrls.createGroup, {
+    return fetch(apiUrls.group, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -50,7 +50,7 @@ function createGroup(eventId: string, groupData: Omit<GroupFullData, 'id'|'guest
 }
 
 function editGroup(groupData: Omit<GroupFullData, 'guests'|'status'>): Promise<Response> {
-    return fetch(apiUrls.editGroup + groupData.id, {
+    return fetch(apiUrls.group + groupData.id, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
@@ -75,7 +75,7 @@ function editGroup(groupData: Omit<GroupFullData, 'guests'|'status'>): Promise<R
 }
 
 function deleteGroup(id: string): Promise<Response> {
-    return fetch(apiUrls.deleteGroup + id, {
+    return fetch(apiUrls.group + id, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',
