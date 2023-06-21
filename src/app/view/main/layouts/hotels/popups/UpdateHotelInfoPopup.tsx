@@ -10,8 +10,11 @@ import { remapToSelectOption } from "../../../../../../core/utils/option";
 import { currUserAtom } from "../../../../../model/currUser/currUser";
 import { updateHotelInfoPopupActions, updateHotelInfoPopupAtoms } from "../../../../../viewModel/hotelsPopup/updateHotelInfo";
 import { usersOptionsActions, usersOptionsAtoms } from "../../../../../model/users/usersOptions";
+import { POPUP_DEFAULT_WIDTH } from "../../../../../viewModel/viewData";
 
-function NameInput() {
+function NameInput({
+    disabled = false,
+}) {
     const name = useAtomWithSelector(updateHotelInfoPopupAtoms, x => x.nameAtom)
     const nameError = useAtomWithSelector(updateHotelInfoPopupAtoms, x => x.nameErrorAtom)
     const handleSetFullName = useAction(updateHotelInfoPopupActions.setName)
@@ -21,6 +24,7 @@ function NameInput() {
         status={nameError ? 'error' : ''}
         onChange={e => handleSetFullName(e.target.value)}
         style={fieldStyle}
+        disabled={disabled}
     />
 }
 
@@ -241,6 +245,21 @@ function Content() {
     )
 }
 
+function ManagersContent() {
+    return (
+        <>
+            <FieldBlock
+                title={'Название гостиницы'}
+                content={<NameInput disabled={true}/>}
+            />
+            <FieldBlock
+                title={'Менеджеры'}
+                content={<ManagersInput/>}
+            />
+        </>
+    )
+}
+
 function UpdateHotelInfoPopup() {
     const currUserRole = useAtomWithSelector(currUserAtom, x => x?.role)
     const popupOpened = useAtomWithSelector(updateHotelInfoPopupAtoms, x => x.openedAtom)
@@ -269,7 +288,10 @@ function UpdateHotelInfoPopup() {
     }
 
     return <Modal
-        title={`${(mode === 'create') ? 'Добавить': 'Редактировать'} гостиницу`}
+        title={currUserRole !== 'senior manager'
+            ? `${(mode === 'create') ? 'Добавить': 'Редактировать'} гостиницу`
+            : 'Назначить менеджеров'
+        }
         open={popupOpened}
         centered
         okText={'Сохранить'}
@@ -280,11 +302,14 @@ function UpdateHotelInfoPopup() {
             onClick: onHandleSubmitHotel,
         }}
         onCancel={handleClosePopup}
-        width={950}
+        width={currUserRole === 'senior manager' ? POPUP_DEFAULT_WIDTH : 950}
     >
         {loading
-        ? <Preloader size="large" />
-        : <Content />}
+            ? <Preloader size="large" />
+            : currUserRole !== 'senior manager'
+                ? <Content />
+                : <ManagersContent />
+        }
     </Modal>
 }
 

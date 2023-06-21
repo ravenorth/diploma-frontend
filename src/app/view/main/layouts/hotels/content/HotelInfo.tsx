@@ -51,10 +51,10 @@ function HotelInfo() {
     const handleOpenEditHotelInfoPopup = useAction(updateHotelInfoPopupActions.open)
     const handleOpenDeletePopup = useAction(confirmDeletePopupActions.open)
 
-    const menuItems: MenuProps['items'] = [
+    let menuItems: MenuProps['items'] = [
         {
             key: '0',
-            label: 'Редактировать данные',
+            label: (currUser?.role === 'senior manager') ? 'Назначить менеджеров' : 'Редактировать данные',
             icon: <EditOutlined />,
             onClick: (e) => {
                 e.domEvent.stopPropagation()
@@ -92,7 +92,7 @@ function HotelInfo() {
                 <Panel key="1"
                     className={styles.header}
                     header={currHotelData.name}
-                    extra={(currUser?.role === 'admin' || currUser?.role === 'hotel') && menuButton(menuItems)}
+                    extra={(currUser?.role !== 'manager') && menuButton(menuItems)}
                 >
                     <div className={styles.content}>
                         <div className={styles.subContent}>
